@@ -1,3 +1,5 @@
+; -*-Lisp-*-
+
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (require 'evil-leader)
@@ -31,3 +33,7 @@
 (ido-mode 1)
 
 (global-auto-revert-mode t)
+
+(add-to-list 'load-path "~/.emacs.d/powerline")
+(require 'powerline)
+(powerline-center-evil-theme)
