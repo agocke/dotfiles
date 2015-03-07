@@ -1,6 +1,14 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
+(add-to-list 'load-path "~/.emacs.d")
 (require 'evil)
+(require 'evil-leader)
+
+(evil-leader/set-leader ",")
+(evil-leader/set-key "e" 'find-file
+                     "<SPC>" 'switch-to-buffer)
+
 (evil-mode 1)
+(global-evil-leader-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,3 +30,5 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+
+(global-auto-revert-mode t)
