@@ -1,5 +1,4 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
-(add-to-list 'load-path "~/.emacs.d")
 (require 'evil)
 (require 'evil-leader)
 
