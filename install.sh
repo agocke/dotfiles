@@ -11,6 +11,3 @@ SCRIPTDIR=$(dirname $0)
 
 ln -s "$SCRIPTDIR/emacs" "$TARGETDIR/.emacs" 
 ln -s "$SCRIPTDIR/emacs.d"  "$TARGETDIR/.emacs.d" 
-
-ln -s "$SCRIPTDIR/zshrc" "$TARGETDIR/.zshrc" 
-ln -s "$SCRIPTDIR/oh-my-zsh" "$TARGETDIR/.oh-my-zsh" 
