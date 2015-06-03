@@ -207,8 +207,8 @@ au BufNewFile,BufRead *.hsc set filetype=haskell
 """""""""""""""""""""""""""""
 " Fuzzy Finder plugin
 """""""""""""""""""""""""""""
-noremap <leader><Space> :FufBuffer<CR>
-noremap <leader>e :FufFile<CR>
+noremap <leader><Space> :CtrlPBuffer<CR>
+let g:ctrlp_map = '<leader>e'
 
 """""""""""""""""""""""""""""
 " Taglist plugin
