@@ -64,6 +64,8 @@ call pathogen#infect('~/.vim/bundle')
 " F5 calls make (builds the project)
 map <F6> :make<CR>
 
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+
 """"""""""""""""""""""""""
 " Vim UI
 """"""""""""""""""""""""""
@@ -205,12 +207,10 @@ set foldlevel=0
 
 set foldminlines=1
 
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-
 """""""""""""""""""""""""""""
 " C#
 """""""""""""""""""""""""""""
-"let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
 
 """""""""""""""""""""""""""""
