@@ -210,7 +210,7 @@ let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 """""""""""""""""""""""""""""
 " C#
 """""""""""""""""""""""""""""
-let g:OmniSharp_server_type = 'roslyn'
+"let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
 
 """""""""""""""""""""""""""""
