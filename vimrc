@@ -163,7 +163,7 @@ autocmd BufReadPre ?* silent loadview
 """"""""""""""""""""""
 syntax enable
 
-set guifont=Consolas:h11
+set guifont=Consolas:h10
 "if CurOs() == "Darwin"
 "  set guifont=Menlo:h12
 "elseif CurOs() == "Windows"
@@ -205,9 +205,12 @@ set foldlevel=0
 
 set foldminlines=1
 
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+
 """""""""""""""""""""""""""""
 " C#
 """""""""""""""""""""""""""""
+let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
 
 """""""""""""""""""""""""""""
