@@ -2,12 +2,12 @@
 @echo off
 if not exist "%1" goto usage
 
-if exist "%1\.emacs" del "%1\.emacs"
-if exist "%1\.emacs.d" rmdir "%1\.emacs.d"
+if exist "%1\.vimrc" del "%1\.vimrc"
+if exist "%1\.vim" rmdir "%1\.vim"
 if exist "%1\.inputrc" del "%1\.inputrc"
 
-mklink "%1\.emacs" "%~dp0emacs"
-mklink /D "%1\.emacs.d" "%~dp0emacs.d"
+mklink "%1\.vimrc" "%~dp0vimrc"
+mklink /D "%1\.vim" "%~dp0vim"
 
 mklink "%1\.inputrc" "%~dp0inputrc"
 
