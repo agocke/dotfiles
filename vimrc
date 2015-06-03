@@ -3,6 +3,16 @@ helptags ~/.vim/doc
 """"""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""
+silent function! OSX()
+  return has('macunix')
+endfunction
+silent function! LINUX()
+  return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+  return  (has('win16') || has('win32') || has('win64'))
+endfunction
+
 " Enable filetype
 filetype plugin indent on
 
@@ -28,7 +38,12 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 
 " autobackup
 set nobackup
-set directory=$HOME/.vimswap/
+if WINDOWS()
+  set directory=$TEMP
+else
+  set directory=$HOME/.vimswap/
+endif
+
 set viewdir=$HOME/.vimviews/
 
 silent execute '!mkdir -p $HOME/.vimswap'
