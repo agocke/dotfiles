@@ -6,7 +6,7 @@ helptags ~/.vim/doc
 " Enable filetype
 filetype plugin indent on
 
-" Turn of vi compatibility (vi is mostly archaic now)
+" Turn off vi compatibility 
 set nocompatible
 
 " Set a new personal leader key
@@ -47,7 +47,7 @@ imap <C-Bslash> λ
 call pathogen#infect('~/.vim/bundle')
 
 " F5 calls make (builds the project)
-map <F5> :make<CR>
+map <F6> :make<CR>
 
 """"""""""""""""""""""""""
 " Vim UI
@@ -148,6 +148,7 @@ autocmd BufReadPre ?* silent loadview
 """"""""""""""""""""""
 syntax enable
 
+set guifont=Consolas:h11
 "if CurOs() == "Darwin"
 "  set guifont=Menlo:h12
 "elseif CurOs() == "Windows"
@@ -158,8 +159,11 @@ syntax enable
 
 set bg=dark
 
+" GUI options
 if has("gui_running")
   set guioptions-=T
+  " Set the initial gvim size
+  set lines=50 columns=110
 endif
 
 colorscheme solarized
@@ -186,19 +190,6 @@ set foldlevel=0
 
 set foldminlines=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Modeline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Append modeline after last line in buffer
-" Use substitue " Use substitute() instead of printf() to handle '%%s'
-" modeline in LaTeX files.
-function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :",
-          \ &tabstop, &shiftwidth, &textwidth)
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
-endfunction
-
 """""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""
@@ -213,10 +204,6 @@ let g:asmsyntax="asmx86"
 " Hsc apparently also means hamster... wtf is hamster??
 au BufNewFile,BufRead *.hsc set filetype=haskell
 
-" Racket filetype
-"autocmd filetype lisp,scheme,art,racket setlocal equalprg=scmindent.rkt
-"au BufNewFile,BufRead *.rkt set filetype=racket
-"au BufNewFile,BufRead *.rktl set filetype=racket
 """""""""""""""""""""""""""""
 " Fuzzy Finder plugin
 """""""""""""""""""""""""""""
