@@ -206,6 +206,11 @@ set foldlevel=0
 set foldminlines=1
 
 """""""""""""""""""""""""""""
+" C#
+"""""""""""""""""""""""""""""
+let g:OmniSharp_selector_ui = 'ctrlp'
+
+"""""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""
 let python_highlight_all = 1
