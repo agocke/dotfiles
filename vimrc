@@ -28,8 +28,8 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 
 " autobackup
 set nobackup
-set directory=$HOME/.vimswap//
-set viewdir=$HOME/.vimviews//
+set directory=$HOME/.vimswap/
+set viewdir=$HOME/.vimviews/
 
 silent execute '!mkdir -p $HOME/.vimswap'
 silent execute '!mkdir -p $HOME/.vimviews'
