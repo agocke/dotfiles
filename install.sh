@@ -7,7 +7,9 @@ if [ ! -d $TARGETDIR ]; then
   exit 1
 fi
 
-SCRIPTDIR=$(dirname $0)
+pushd `dirname $0` > /dev/null
+SCRIPTDIR=`pwd`
+popd > /dev/null
 
-ln -s "$SCRIPTDIR/emacs" "$TARGETDIR/.emacs" 
-ln -s "$SCRIPTDIR/emacs.d"  "$TARGETDIR/.emacs.d" 
+ln -s "$SCRIPTDIR/vimrc" "$TARGETDIR/.vimrc"
+ln -s "$SCRIPTDIR/vim"  "$TARGETDIR/.vim"

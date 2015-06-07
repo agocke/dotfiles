@@ -79,3 +79,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -s "/Users/andy/.k/kvm/kvm.sh" ] && . "/Users/andy/.k/kvm/kvm.sh" # Load kvm
