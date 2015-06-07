@@ -13,3 +13,4 @@ popd > /dev/null
 
 ln -s "$SCRIPTDIR/vimrc" "$TARGETDIR/.vimrc"
 ln -s "$SCRIPTDIR/vim"  "$TARGETDIR/.vim"
+ln -s "$SCRIPTDIR/gitconfig" "$TARGETDIR/.gitconfig"
