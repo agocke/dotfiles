@@ -53,6 +53,7 @@ plugins=(git)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source dnvm.sh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
