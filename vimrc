@@ -248,6 +248,9 @@ let g:neocomplcache_omni_patterns.cs = '.*'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<CR>" : "\<TAB>"
+
 """""""""""""""""""""""""""""
 " Python
 """""""""""""""""""""""""""""
