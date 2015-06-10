@@ -64,7 +64,7 @@ call pathogen#infect('~/.vim/bundle')
 " F5 calls make (builds the project)
 map <F6> :make<CR>
 
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+let g:syntastic_cs_checkers = ['code_checker']
 
 """"""""""""""""""""""""""
 " Vim UI
@@ -105,9 +105,9 @@ set scrolloff=4
 " Text, tabs, and indent
 """"""""""""""""""""""""""""""""""
 set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set smarttab
 
 " Set up text wrap
@@ -165,19 +165,18 @@ autocmd BufReadPre ?* silent loadview
 """"""""""""""""""""""
 syntax enable
 
-set guifont=Consolas:h10
-"if CurOs() == "Darwin"
-"  set guifont=Menlo:h12
-"elseif CurOs() == "Windows"
-"  set guifont=Consolas:h10
-"elseif CurOs() == "Linux"
-"  set guifont=Consolas\ 10
-"endif
+if WINDOWS()
+    set guifont=Consolas:h10
+elseif OSX()
+    set guifont=Menlo:h12
+elseif LINUX()
+    set guifont=Consolas\ 10
+endif
 
 set bg=dark
 
 " GUI options
-if has("gui_running")
+if has("gui_running") && WINDOWS()
   set guioptions-=T
   " Set the initial gvim size
   set lines=50 columns=110
@@ -212,6 +211,8 @@ set foldminlines=1
 """""""""""""""""""""""""""""
 let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
+
+autocmd FileType cs nnoremap <C-]> :OmniSharpGotoDefinition<cr>
 
 """""""""""""""""""""""""""""
 " Completion
@@ -248,8 +249,14 @@ let g:neocomplcache_omni_patterns.cs = '.*'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 
+inoremap <silent><CR> neocomplcache#cancel_popup() . "\<CR>"
+
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<CR>" : "\<TAB>"
+inoremap <expr> <TAB> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup()
+endfunction
+
 
 """""""""""""""""""""""""""""
 " Python
