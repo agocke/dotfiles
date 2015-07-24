@@ -9,3 +9,5 @@
 [user]
     name = Andy Gocke
     email = angocke@microsoft.com
+[push]
+    default = simple
