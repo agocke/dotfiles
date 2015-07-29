@@ -170,7 +170,7 @@ if WINDOWS()
 elseif OSX()
     set guifont=Menlo:h12
 elseif LINUX()
-    set guifont=Consolas\ 10
+    set guifont=Inconsolata\ 12
 endif
 
 set bg=dark
@@ -213,6 +213,19 @@ let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
 
 autocmd FileType cs nnoremap <C-]> :OmniSharpGotoDefinition<cr>
+
+"""""""""""""""""""""""""""""
+" Completion
+"""""""""""""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return neocomplete#close_popup() . "\<CR>"
+endfunction
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """""""""""""""""""""""""""""
 " Python
