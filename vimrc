@@ -170,7 +170,7 @@ if WINDOWS()
 elseif OSX()
     set guifont=Menlo:h12
 elseif LINUX()
-    set guifont=Consolas\ 10
+    set guifont=Inconsolata\ 12
 endif
 
 set bg=dark
@@ -253,6 +253,7 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 "   return neocomplcache#smart_close_popup()
 " endfunction
 
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """""""""""""""""""""""""""""
 " Python
