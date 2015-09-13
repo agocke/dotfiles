@@ -209,10 +209,6 @@ set foldminlines=1
 """""""""""""""""""""""""""""
 " C#
 """""""""""""""""""""""""""""
-let g:OmniSharp_server_type = 'roslyn'
-let g:OmniSharp_selector_ui = 'ctrlp'
-
-autocmd FileType cs nnoremap <C-]> :OmniSharpGotoDefinition<cr>
 
 """""""""""""""""""""""""""""
 " Completion
@@ -249,13 +245,13 @@ let g:neocomplcache_omni_patterns.cs = '.*'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 
-inoremap <silent><CR> neocomplcache#cancel_popup() . "\<CR>"
-
-" <TAB>: completion.
-inoremap <expr> <TAB> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup()
-endfunction
+" inoremap <silent><CR> neocomplcache#cancel_popup() . "\<CR>"
+" 
+" " <TAB>: completion.
+" inoremap <expr> <TAB> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+"   return neocomplcache#smart_close_popup()
+" endfunction
 
 
 """""""""""""""""""""""""""""
