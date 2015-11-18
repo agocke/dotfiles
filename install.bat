@@ -1,21 +1,21 @@
-
 @echo off
-if not exist "%1" goto usage
 
-if exist "%1\.vimrc" del "%1\.vimrc"
-if exist "%1\.vim" rmdir "%1\.vim"
-if exist "%1\.inputrc" del "%1\.inputrc"
-if exist "%1\.gitconfig" del "%1\.gitconfig"
-if exist "%1\.bashrc" del "%1\.bashrc"
-if exist "%1\vs-bash.bat" del "%1\vs-bash.bat"
+if exist "%UserProfile%\.vimrc" del "%UserProfile%\.vimrc"
+if exist "%UserProfile%\.vim" rmdir "%UserProfile%\.vim"
+if exist "%UserProfile%\.inputrc" del "%UserProfile%\.inputrc"
+if exist "%UserProfile%\.gitconfig" del "%UserProfile%\.gitconfig"
+if exist "%UserProfile%\.bashrc" del "%UserProfile%\.bashrc"
+if exist "%UserProfile%\.bash_profile" del "%UserProfile%\.bash_profile"
+if exist "%UserProfile%\vs-bash.bat" del "%UserProfile%\vs-bash.bat"
 
-mklink "%1\.vimrc" "%~dp0vimrc"
-mklink /D "%1\.vim" "%~dp0vim"
+mklink "%UserProfile%\.vimrc" "%~dp0vimrc"
+mklink /D "%UserProfile%\.vim" "%~dp0vim"
 
-mklink "%1\.inputrc" "%~dp0inputrc"
-mklink "%1\.gitconfig" "%~dp0gitconfig"
-mklink "%1\.bashrc" "%~dp0bashrc"
-mklink "%1\vs-bash.bat" "%~dp0vs-bash.bat"
+mklink "%UserProfile%\.inputrc" "%~dp0inputrc"
+mklink "%UserProfile%\.gitconfig" "%~dp0gitconfig"
+mklink "%UserProfile%\.bashrc" "%~dp0bashrc"
+mklink "%UserProfile%\.bash_profile" "%~dp0bash_profile"
+mklink "%UserProfile%\vs-bash.bat" "%~dp0vs-bash.bat"
 
 goto exit
 
