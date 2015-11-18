@@ -182,6 +182,11 @@ if has("gui_running") && WINDOWS()
   set lines=50 columns=110
 endif
 
+if !has('gui_running')
+    let g:solarized_termcolors=&t_Co
+    let g:solarized_termtrans=1
+endif
+
 colorscheme solarized
 
 set encoding=utf8
