@@ -183,8 +183,9 @@ if has("gui_running") && WINDOWS()
 endif
 
 if !has('gui_running')
-    let g:solarized_termcolors=&t_Co
-    let g:solarized_termtrans=1
+    set term=xterm
+    set t_Co=256
+    let g:solarized_termcolors=256
 endif
 
 colorscheme solarized
