@@ -1,6 +1,6 @@
 
 if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
+    . ~/.bashrc
 fi
 
-alias ls='ls -h --color'
+alias ls='ls -hG'

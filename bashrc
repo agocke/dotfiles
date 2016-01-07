@@ -1,5 +1,5 @@
-if [ -f /etc/bash_profile ]; then
-    . /etc/bash_profile
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
 fi
 
 # Note: ~/.ssh/environment should not be used, as it
@@ -50,3 +50,6 @@ elif ! agent_has_keys; then
 fi
 
 unset env
+
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+
