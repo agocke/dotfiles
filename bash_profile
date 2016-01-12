@@ -11,4 +11,5 @@ if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
     . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
 fi
 
-alias ls='ls -hG'
+export CLICOLOR=1
+ls --color=auto &> /dev/null && alias ls='ls --color=auto'
