@@ -42,12 +42,12 @@ if WINDOWS()
   set directory=$TEMP
 else
   set directory=$HOME/.vimswap/
+
+  set viewdir=$HOME/.vimviews/
+
+  silent execute '!mkdir -p $HOME/.vimswap'
+  silent execute '!mkdir -p $HOME/.vimviews'
 endif
-
-set viewdir=$HOME/.vimviews/
-
-silent execute '!mkdir -p $HOME/.vimswap'
-silent execute '!mkdir -p $HOME/.vimviews'
 
 " For when you forget to sudo -- really write the file
 cmap w!! w !sudo tee % > /dev/null
@@ -151,11 +151,7 @@ catch
 endtry
 
 " Automatically change current directory to directory of buffer
-if exists('+autochdir')
-    set autochdir
-else
-    autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
+autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
 autocmd BufWritePost, BufLeave, WinLeave ?* mkview
 autocmd BufReadPre ?* silent loadview
