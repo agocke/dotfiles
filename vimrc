@@ -66,6 +66,9 @@ map <F6> :make<CR>
 
 let g:syntastic_cs_checkers = ['code_checker']
 
+" Show whitespace
+set list
+
 """"""""""""""""""""""""""
 " Vim UI
 """"""""""""""""""""""""""
