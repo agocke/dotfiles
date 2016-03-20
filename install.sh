@@ -21,3 +21,4 @@ install_file gitconfig
 install_file bashrc
 install_file inputrc
 install_file bash_profile
+install_file git-prompt.sh
