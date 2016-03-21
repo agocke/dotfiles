@@ -1,14 +1,11 @@
+#!/usr/bin/env bash
 
-if [ -f ~/.bashrc ]; then
+if [ -e ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-   . $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
-    . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+if [ -e ~/.git-prompt.sh ]; then
+    . ~/.git-prompt.sh
 fi
 
 export CLICOLOR=1
