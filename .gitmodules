@@ -1,3 +1,6 @@
 [submodule "vim/bundle/neocomplete"]
 	path = vim/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/bundle/omnisharp-vim"]
+	path = vim/bundle/omnisharp-vim
+	url = https://github.com/OmniSharp/omnisharp-vim.git
