@@ -2,6 +2,10 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+if [ -e ~/.git-prompt.sh ]; then
+    . ~/.git-prompt.sh
+fi
+
 if ! pgrep -u $USER ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh/agent.env
 fi
