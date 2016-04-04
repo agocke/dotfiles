@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set runtimepath=~/.vim,~/.vim/after,$VIMRUNTIME
 helptags ~/.vim/doc
 """"""""""""""""""""""""""
