@@ -6,14 +6,6 @@ if [ -e ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
 fi
 
-if ! pgrep -u $USER ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh/agent.env
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval $(<~/.ssh/agent.env)
-fi
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-
 PS1='\[\033]0;:${PWD//[^[:ascii:]]/?}\007\]' # set window title
 PS1="$PS1"'\n'              # new line
 PS1="$PS1"'\[\033[32m\]'    # change to green
