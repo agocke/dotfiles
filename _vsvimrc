@@ -1,0 +1,15 @@
+" Fast save
+
+let mapleader=","
+
+nmap <Leader>w :w<CR>
+
+nmap <Leader>x :x<CR>
+
+
+set incsearch
+
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
