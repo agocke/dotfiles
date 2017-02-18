@@ -208,27 +208,6 @@ set foldlevel=0
 
 set foldminlines=1
 
-"""""""""""""""""""""""""""""
-" C#
-"""""""""""""""""""""""""""""
-let g:OmniSharp_server_type = 'roslyn'
-let g:syntastic_cs_checkers = ['code_checker']
-let g:OmniSharp_selector_ui = 'ctrlp'
-
-augroup omnisharp_commands
-    autocmd!
-
-    " Run async build on
-    autocmd FileType cs nnoremap <F6> :OmniSharpBuildAsync<CR>
-
-    " Update syntax check
-    autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-    " Add usings
-    autocmd FileType cs nnoremap <C-p> :OmniSharpFixUsings<CR>
-
-augroup END
-
 
 """""""""""""""""""""""""""""
 " Completion
@@ -301,7 +280,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
