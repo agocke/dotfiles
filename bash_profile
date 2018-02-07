@@ -3,6 +3,10 @@
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
+if [[ $(uname) == "Darwin" ]]; then
+    eval $(/usr/libexec/path_helper -s)
+fi
+
 if ! [[ $(uname) =~ MINGW* ]]; then
     . ~/.bashrc
 fi

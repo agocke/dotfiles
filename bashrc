@@ -10,6 +10,11 @@ if [[ $(uname) =~ MINGW* ]]; then
     . ~/.bash_profile
 fi
 
+# Bash completion
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+fi
+
 PS1='\[\033]0;:${PWD//[^[:ascii:]]/?}\007\]' # set window title
 PS1="$PS1"'\n'              # new line
 PS1="$PS1"'\[\033[32m\]'    # change to green
