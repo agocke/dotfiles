@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# MINGW doesn't automatically use an interactive shell, so bashrc isn't
+# imported
+os=$(uname)
+if [[ "$os" =~ MINGW* ]]; then
+    source ~/.bashrc
+fi
+
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
