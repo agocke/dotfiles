@@ -5,5 +5,5 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 if [ -f ~/.bashrc ]; then
-    sourc ~/.bashrc
+    source ~/.bashrc
 fi

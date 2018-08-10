@@ -43,9 +43,9 @@ agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
 if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     agent_start
-    ssh-add -t 3600 # expire after 1 hour
+    ssh-add -t 1d # expire after 1 day
 elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    ssh-add -t 3600 # expire after 1 hour
+    ssh-add -t 1d # expire after 1 day
 fi
 
 unset env
