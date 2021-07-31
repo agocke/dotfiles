@@ -10,6 +10,9 @@ fi
 if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
 fi
+if [ -f /opt/homebrew/etc/bash_completion ]; then
+    . /opt/homebrew/etc/bash_completion
+fi
 
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
@@ -49,3 +52,6 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 
 unset env
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
