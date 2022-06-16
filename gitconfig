@@ -12,3 +12,5 @@
     email = angocke@microsoft.com
 [push]
     default = simple
+[url "https://"]
+	insteadOf = git://
