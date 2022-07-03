@@ -114,6 +114,7 @@ set smarttab
 set wrap
 set linebreak
 set showbreak=>>>
+set textwidth=100
 
 set autoindent
 set smartindent

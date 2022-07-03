@@ -13,4 +13,8 @@
 [push]
     default = simple
 [url "https://"]
-	insteadOf = git://
+    insteadOf = git://
+[init]
+    defaultBranch = main
+[fetch]
+    prune = true

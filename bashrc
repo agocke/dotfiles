@@ -53,9 +53,13 @@ fi
 
 unset env
 
+export EDITOR='vim'
+export PATH=~/.bin:$PATH
+
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-export EDITOR='vim'
-export PATH=~/.bin:$PATH
+if [ -f "$HOME/.dotnet/env" ]; then
+    . "$HOME/.dotnet/env"
+fi
