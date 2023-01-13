@@ -9,7 +9,7 @@
     pushf = push --force-with-lease
 [user]
     name = Andy Gocke
-    email = angocke@microsoft.com
+    email = andy@commentout.net
 [push]
     default = simple
 [url "https://"]
