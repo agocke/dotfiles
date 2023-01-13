@@ -60,6 +60,6 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-if [ -f "$HOME/.dotnet/env" ]; then
-    . "$HOME/.dotnet/env"
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
 fi
