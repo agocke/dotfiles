@@ -56,6 +56,8 @@ unset env
 export EDITOR='vim'
 export PATH=~/.bin:$PATH
 
+alias git-cleanup='git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -D'
+
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
