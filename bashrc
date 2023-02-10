@@ -54,7 +54,8 @@ fi
 unset env
 
 export EDITOR='vim'
-export PATH=~/.bin:$PATH
+export PATH=~/local/.bin:$PATH
+export USE_SCCACHE=true
 
 alias git-cleanup='git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -D'
 
@@ -62,6 +63,6 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-if [ -f "$HOME/.local/share/dnvm/env" ]; then
-    . "$HOME/.local/share/dnvm/env"
+if [ -f "$HOME/Library/Application Support/dnvm/env" ]; then
+    . "$HOME/Library/Application Support/dnvm/env"
 fi
