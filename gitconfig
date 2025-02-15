@@ -18,3 +18,5 @@
     defaultBranch = main
 [fetch]
     prune = true
+[core]
+    longPaths = true

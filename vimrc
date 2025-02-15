@@ -63,9 +63,6 @@ imap <C-Bslash> λ
 " Allow vim installs using the pathogen format
 call pathogen#infect('~/.vim/bundle')
 
-" Show whitespace
-set list listchars=tab:»·,trail:·
-
 """"""""""""""""""""""""""
 " Vim UI
 """"""""""""""""""""""""""
